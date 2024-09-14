@@ -9,7 +9,7 @@ body {
   background-image: radial-gradient(circle at 50% 50%, black 10%, silver 10%);
   background-repeat: repeat;
   background-size: 12px 12px;
-  animation: move-background 5s linear infinite;
+  animation: move-background 1300ms linear infinite;
 }
 
 #root {
@@ -26,6 +26,56 @@ body {
     background-position: 0px 0px;
   }
   to {
-    background-position: 12px 12px;
+    background-position: 0px 12px;
+  }
+}
+
+.theme-dark {
+  --toolbar-text-colour: silver;
+  --toolbar-bg-colour: black;
+  --prefix-upper-colour: lime;
+  --prefix-upper-secondary-colour: magenta;
+  --output-prefix-colour: gold;
+  --output-text-colour: white;
+  --output-bg-colour: rgba(0, 0, 0, 0.9);
+  --link-colour: cyan;
+}
+
+.theme-light {
+  --toolbar-text-colour: white;
+  --toolbar-bg-colour: darkred;
+  --prefix-upper-colour: orangered;
+  --prefix-upper-secondary-colour: darkred;
+  --output-prefix-colour: blue;
+  --output-text-colour: darkslategrey;
+  --output-bg-colour: rgba(255, 255, 255, 0.9);
+  --link-colour: blue;
+}
+
+.theme-neo {
+  --toolbar-text-colour: white;
+  --toolbar-bg-colour: black;
+  --prefix-upper-colour: lime;
+  --prefix-upper-secondary-colour: green;
+  --output-prefix-colour: green;
+  --output-text-colour: lime;
+  --output-bg-colour: rgba(0, 0, 0, 0.95);
+  --link-colour: green;
+}
+
+.theme-solarized {
+  --toolbar-text-colour: #839496;
+  --toolbar-bg-colour: #002b36;
+  --prefix-upper-colour: #d33682;
+  --prefix-upper-secondary-colour: #6c71c4;
+  --output-prefix-colour: #859900;
+  --output-text-colour: #93a1a1;
+  --output-bg-colour: #002b36;
+  --link-colour: #268bd2;
+}
+
+@media only screen and (max-width: 768px) {
+  #root {
+    padding: 0;
   }
 }

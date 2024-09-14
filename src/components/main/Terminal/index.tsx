@@ -17,6 +17,8 @@ import EducationText from "../../outputs/EducationText";
 import ContactText from "../../outputs/ContactText";
 import JourneyText from "../../outputs/JourneyText";
 
+const themes = ["light", "dark", "neo", "solarized"];
+
 const prefixMessage = (
   <OutputText className={styles["input-prefix-upper"]} addExtraLine={false}>
     marco@portfolio{" "}
@@ -28,7 +30,8 @@ const initialOutput = (
   <>
     {prefixMessage}
     <OutputText>
-      Hey! Welcome to Marco Buontempo's portfolio. Thanks for visiting, let's explore! :)
+      Hey! Welcome to Marco Buontempo's portfolio. Thanks for visiting, let's
+      explore! :)
     </OutputText>
     <HelpText />
   </>
@@ -62,10 +65,32 @@ export default function Terminal() {
     }
   };
 
+  const changeTheme = (themename: string) => {
+    // Remove any existing class names with the string 'theme-' from the body element
+    document.body.className = document.body.className
+      .split(" ")
+      .filter((className) => !className.startsWith("theme-"))
+      .join(" ");
+
+    // Add the new theme class to the body
+    document.body.classList.add(`theme-${themename}`);
+
+    // Update local storage with the new theme name
+    localStorage.setItem("theme", themename);
+  };
+
   const getOutputText = (command: string) => {
     switch (command) {
       case "hello world":
         return <OutputText>hello there :)</OutputText>;
+      case "theme":
+        return (
+          <OutputText>
+            Wrong usage of command 'theme'. Please use 'theme -c
+            &lt;themename&gt;'. Refer to 'help' command for list of available
+            themes.
+          </OutputText>
+        );
       case "about":
         return <AboutText />;
       case "journey":
@@ -88,18 +113,30 @@ export default function Terminal() {
   };
 
   const handleInputCommand = (command: string) => {
-    command = command.toLowerCase();
+    const args = command.toLowerCase().split(" ");
+    command = args[0];
+
     if (command === "clear") {
       setOutputStack(emptyOutputStack);
-    } else {
-      const input = (
-        <OutputText addExtraLine={false}>
-          <span className={styles["output-prefix"]}>$</span> {command}
-        </OutputText>
-      );
-      const output = getOutputText(command);
-      setOutputStack([...outputStack, input, output, prefixMessage]);
+      return;
     }
+
+    if (command === "theme" && args[1] === "-c" && themes.includes(args[2])) {
+      changeTheme(args[2]);
+      return;
+    }
+
+    if (command === "hello" && args[1] === "world") {
+      command = "hello world";
+    }
+
+    const input = (
+      <OutputText addExtraLine={false}>
+        <span className={styles["output-prefix"]}>$</span> {command}
+      </OutputText>
+    );
+    const output = getOutputText(command);
+    setOutputStack([...outputStack, input, output, prefixMessage]);
   };
 
   const focusInput = (scrollTo: boolean) => {

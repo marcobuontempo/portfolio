@@ -32,7 +32,7 @@ export default function HelpText() {
       <OutputText addExtraLine={false}>Additional commands:</OutputText>
       <OutputText addExtraLine={false} className={styles["pad-left-output"]}>
         <span className={styles['bold-output']}>theme [-c] &lt;themename&gt;</span>    - change the theme of the terminal.
-        available themes: neo
+        available themes: light, dark, neo, solarized
       </OutputText>
       <OutputText addExtraLine={true} className={styles["pad-left-output"]}>
         <span className={styles['bold-output']}>clear</span>                     - clears the contents of the terminal
