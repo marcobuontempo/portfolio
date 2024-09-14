@@ -12,7 +12,7 @@ export default function AboutText({ }: Props) {
         I'm enthusiastic about all things tech, from building my own computers, to tinkering with projects and code, to transforming website ideas to life. I am constantly learning and improving my skills, largely driven by my curiousity for the benefits, advancements, and fun that technology can offer.
       </OutputText>
       <OutputText>
-        Beyond the screen, I'm passionate about travel, trying new things, and spending time with friends. :)
+        Beyond the screen, I'm passionate about travel, trying new things, and spending time with family & friends. :)
       </OutputText>
     </>
   )

@@ -1,6 +1,6 @@
 .output-text {
   display: block;
   width: 100%;
-  padding: 2px 0px;
   white-space: break-spaces;
+  line-height: calc(1rem + 8px);
 }
