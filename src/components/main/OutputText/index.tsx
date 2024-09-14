@@ -14,9 +14,9 @@ export default function OutputText({
 }: Props) {
   return (
     <>
-      <p className={`${styles['output-text']} ${className}`}>
+      <div className={`${styles['output-text']} ${className}`}>
         {children}
-      </p>
+      </div>
       {
         addExtraLine &&
         <br />

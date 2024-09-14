@@ -1,13 +1,39 @@
-import OutputText from "../main/OutputText"
+import OutputText from "../main/OutputText";
+import styles from "./styles.module.css";
 
-type Props = {}
-
-export default function ContactText({ }: Props) {
+export default function ContactText() {
   return (
     <>
-      <OutputText>Email: <a href='mailto:marcobuontempo96@gmail.com' target='_blank' referrerPolicy='no-referrer'>marcobuontempo96@gmail.com</a></OutputText>
-      <OutputText>GitHub: <a href='https://github.com/marcobuontempo/' target='_blank' referrerPolicy='no-referrer'>/marcobuontempo</a></OutputText>
-      <OutputText>LinkedIn: <a href='https://www.linkedin.com/in/marcobuontempo/' target='_blank' referrerPolicy='no-referrer'>/in/marcobuontempo</a></OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>Email: </span>
+        <a
+          href="mailto:marcobuontempo96@gmail.com"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          marcobuontempo96@gmail.com
+        </a>
+      </OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>GitHub: </span>
+        <a
+          href="https://github.com/marcobuontempo/"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          github.com/marcobuontempo
+        </a>
+      </OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>LinkedIn: </span>
+        <a
+          href="https://www.linkedin.com/in/marcobuontempo/"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          linkedin.com/in/marcobuontempo
+        </a>
+      </OutputText>
     </>
-  )
+  );
 }

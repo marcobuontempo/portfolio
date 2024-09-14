@@ -1,14 +1,25 @@
-import OutputText from '../main/OutputText'
+import OutputText from "../main/OutputText";
+import styles from "./styles.module.css";
 
-type Props = {}
-
-export default function SkillsText({ }: Props) {
+export default function SkillsText() {
   return (
     <>
-      <OutputText>Languages: HTML5, CSS3, JavaScript (ES6+), TypeScript, Python3</OutputText>
-      <OutputText>Frameworks: React, Express (Node.js), Tailwind CSS, Bootstrap5</OutputText>
-      <OutputText>Databases: MongoDB, SQL</OutputText>
-      <OutputText>Tools and Technologies: Git, GitHub, Terminal (Git Bash), Azure Cloud, npm, Agile and Scrum Methodology</OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>Languages:</span> HTML5, CSS3,
+        JavaScript (ES6+), TypeScript, Python3
+      </OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>Frameworks:</span> React,
+        Express (Node.js), Tailwind CSS, Bootstrap5
+      </OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>Databases:</span> MongoDB, SQL
+      </OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>Tools and Technologies:</span>{" "}
+        Git, GitHub, Terminal (Git Bash), Azure Cloud, npm, Agile and Scrum
+        Methodology
+      </OutputText>
     </>
-  )
+  );
 }

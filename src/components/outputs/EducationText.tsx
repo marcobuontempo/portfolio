@@ -1,13 +1,42 @@
-import OutputText from '../main/OutputText'
+import OutputText from "../main/OutputText";
+import styles from "./styles.module.css";
 
-type Props = {}
-
-export default function EducationText({ }: Props) {
+export default function EducationText() {
   return (
     <>
-      <OutputText>Academy Xi (Generation Australia) - Front-End Web Development Bootcamp</OutputText>
-      <OutputText>Monash University - Business (Econometrics & Marketing)</OutputText>
-      <OutputText>Salesian College - VCE</OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>
+          Academy Xi (Generation Australia) - Front-End Web Development Bootcamp
+        </span>
+        <p className={styles["pad-left-output"]}>
+          An intensive full-time web development bootcamp with over 520
+          dedicated hours. I was introduced to HTML, CSS, and JavaScript (among
+          others) as we learnt about frontend technologies, as well as other
+          important areas such as as Git and GitHub. Additionally, we regularly
+          practiced soft-skills and mental excercises to enable us to excel
+          with others in the workplace.
+        </p>
+      </OutputText>
+
+      <OutputText>
+        <span className={styles["bold-output"]}>
+          Monash University - Bachelor of Business (Econometrics & Marketing)
+        </span>
+        <p className={styles["pad-left-output"]}>
+          Learnt general knowledge of business sectors, such as accounting,
+          economics, law, etc. Focused my units towards marketing and
+          econometrics, as these were my most enjoyable and appealing fields.
+          This was also my first exposure in working in teams to deliver large
+          projects.
+        </p>
+      </OutputText>
+      <OutputText>
+        <span className={styles["bold-output"]}>Salesian College - VCE</span>
+        <p className={styles["pad-left-output"]}>
+          Subjects: English, Further Maths, Maths Methods, Physics, Business
+          Management
+        </p>
+      </OutputText>
     </>
-  )
+  );
 }

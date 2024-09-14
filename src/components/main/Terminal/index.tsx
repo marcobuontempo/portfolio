@@ -1,99 +1,144 @@
-import { KeyboardEvent, useState } from 'react'
-import styles from './styles.module.css'
-import OutputText from '../OutputText'
-import HelpText from '../../outputs/HelpText'
-import ErrorText from '../../outputs/ErrorText'
-import AboutText from '../../outputs/AboutText'
-import ProjectsText from '../../outputs/ProjectsText'
-import SkillsText from '../../outputs/SkillsText'
-import ExperienceText from '../../outputs/ExperienceText'
-import EducationText from '../../outputs/EducationText'
-import ContactText from '../../outputs/ContactText'
-import JourneyText from '../../outputs/JourneyText'
+import {
+  cloneElement,
+  KeyboardEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import styles from "./styles.module.css";
+import OutputText from "../OutputText";
+import HelpText from "../../outputs/HelpText";
+import ErrorText from "../../outputs/ErrorText";
+import AboutText from "../../outputs/AboutText";
+import ProjectsText from "../../outputs/ProjectsText";
+import SkillsText from "../../outputs/SkillsText";
+import ExperienceText from "../../outputs/ExperienceText";
+import EducationText from "../../outputs/EducationText";
+import ContactText from "../../outputs/ContactText";
+import JourneyText from "../../outputs/JourneyText";
 
 const prefixMessage = (
-  <OutputText className={styles['input-prefix-upper']} addExtraLine={false}>marco@portfolio ~</OutputText>
-)
+  <OutputText className={styles["input-prefix-upper"]} addExtraLine={false}>
+    marco@portfolio{" "}
+    <span className={styles["input-prefix-upper-secondary"]}>~</span>
+  </OutputText>
+);
 
-const initialMessage = (
+const initialOutput = (
   <>
     {prefixMessage}
-    <OutputText>Hey! Welcome to my portfolio. Let's explore!</OutputText>
+    <OutputText>
+      Hey! Welcome to Marco Buontempo's portfolio. Thanks for visiting, let's explore! :)
+    </OutputText>
     <HelpText />
   </>
-)
+);
 
-const emptyMessageStack = [prefixMessage];
+const emptyOutputStack = [prefixMessage];
 
 export default function Terminal() {
-  const [messageStack, setMessageStack] = useState([initialMessage]);
-  const [inputStack, setInputStack] = useState(['']);
+  const outputRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [outputStack, setOutputStack] = useState([initialOutput]);
+  const [inputStack, setInputStack] = useState([""]);
   const [inputStackIndex, setInputStackIndex] = useState(0);
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState("");
 
   const enterInput = (e: KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleInputCommand(inputText);
-      setInputStack(['', inputText, ...inputStack.slice(1)]);
+      setInputStack(["", inputText, ...inputStack.slice(1)]);
       setInputStackIndex(0);
-      setInputText('');
-    } else if (e.key === 'ArrowUp') {
+      setInputText("");
+      focusInput(true);
+    } else if (e.key === "ArrowUp") {
       const idx = Math.min(inputStackIndex + 1, inputStack.length - 1);
       setInputStackIndex(idx);
       setInputText(inputStack[idx]);
-    } else if (e.key === 'ArrowDown') {
+    } else if (e.key === "ArrowDown") {
       const idx = Math.max(inputStackIndex - 1, 0);
       setInputStackIndex(idx);
       setInputText(inputStack[idx]);
     }
-  }
+  };
 
   const getOutputText = (command: string) => {
     switch (command) {
-      case 'about':
+      case "hello world":
+        return <OutputText>hello there :)</OutputText>;
+      case "about":
         return <AboutText />;
-      case 'journey':
+      case "journey":
         return <JourneyText />;
-      case 'skills':
+      case "skills":
         return <SkillsText />;
-      case 'experience':
+      case "experience":
         return <ExperienceText />;
-      case 'education':
+      case "education":
         return <EducationText />;
-      case 'projects':
+      case "projects":
         return <ProjectsText />;
-      case 'contact':
+      case "contact":
         return <ContactText />;
-      case 'help':
+      case "help":
         return <HelpText />;
       default:
         return <ErrorText command={command} />;
     }
-  }
+  };
 
   const handleInputCommand = (command: string) => {
     command = command.toLowerCase();
-    if (command === 'clear') {
-      setMessageStack(emptyMessageStack);
+    if (command === "clear") {
+      setOutputStack(emptyOutputStack);
     } else {
-      const input = <OutputText addExtraLine={false}>$ {command}</OutputText>
+      const input = (
+        <OutputText addExtraLine={false}>
+          <span className={styles["output-prefix"]}>$</span> {command}
+        </OutputText>
+      );
       const output = getOutputText(command);
-      setMessageStack([...messageStack, input, output, prefixMessage]);
+      setOutputStack([...outputStack, input, output, prefixMessage]);
     }
-  }
+  };
+
+  const focusInput = (scrollTo: boolean) => {
+    if (inputRef.current) {
+      inputRef.current.focus({ preventScroll: !scrollTo });
+    }
+  };
+
+  useEffect(() => {
+    focusInput(true);
+  }, []);
+
+  useEffect(() => {
+    if (outputRef.current) {
+      outputRef.current.scrollTop = outputRef.current.scrollHeight;
+    }
+  }, [outputStack]);
 
   return (
-    <main className={styles['terminal']}>
-      <div className={styles['toolbar']}></div>
-      <div className={styles['output']}>
-        {messageStack}
+    <main className={styles["terminal"]} onClick={() => focusInput(false)}>
+      <div className={styles["toolbar"]}>terminal - marco@portfolio ~</div>
+      <div className={styles["output"]} ref={outputRef}>
+        {outputStack.map((element, index) =>
+          cloneElement(element, { key: index })
+        )}{" "}
         <div>
-          <div className={styles['input-container']}>
-            <span className={styles['input-prefix-lower']}>$ </span>
-            <input type='text' className={styles['input']} onKeyDown={enterInput} value={inputText} onChange={(e) => setInputText(e.target.value)} />
+          <div className={styles["input-container"]}>
+            <span className={styles["input-prefix-lower"]}>$ </span>
+            <input
+              type="text"
+              className={styles["input"]}
+              ref={inputRef}
+              onKeyDown={enterInput}
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+            />
           </div>
         </div>
       </div>
     </main>
-  )
+  );
 }
