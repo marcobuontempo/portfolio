@@ -38,8 +38,7 @@
   padding: 2px;
   background: var(--output-bg-colour);
   scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
-  scroll-width: thin;
-}
+  }
 
 .output-prefix {
   color: var(--output-prefix-colour);
@@ -87,15 +86,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .terminal {
-    font-size: 0.8rem;
-    border-radius: 0;
-  }
-
-  .toolbar {
-    border-radius: 0;
-  }
-
+  .terminal,
   .input {
     font-size: 0.8rem;
   }
