@@ -2,6 +2,10 @@
   font-weight: bold;
 }
 
+.italic-output {
+  font-style: italic;
+}
+
 .pad-left-output {
   padding-left: 2ch;
 }

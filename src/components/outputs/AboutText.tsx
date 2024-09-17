@@ -4,7 +4,7 @@ export default function AboutText() {
   return (
     <>
       <OutputText>
-        Hey! I'm Marco, a Junior Fullstack Developer based in Melbourne,
+        Hey! I'm Marco, a Junior Full Stack Developer based in Melbourne,
         Australia, with a passion for crafting beautiful, user-friendly web
         experiences. While I enjoy working across the full stack, I have a
         particular love for frontend development, where creativity and
@@ -14,7 +14,7 @@ export default function AboutText() {
         I'm enthusiastic about all things tech, from building my own computers,
         to tinkering with projects and code, to transforming website ideas to
         life. I am constantly learning and improving my skills, largely driven
-        by my curiousity for the benefits, advancements, and fun that technology
+        by my curiosity for the benefits, advancements, and fun that technology
         can offer.
       </OutputText>
       <OutputText>

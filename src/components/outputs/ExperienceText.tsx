@@ -9,10 +9,10 @@ export default function ExperienceText() {
       </OutputText>
       <OutputText>
         At Infosys, I was able to be exposed to the IT workforce and build up my
-        skillset in the tech sector. Receiving intensive training in multiple
+        skill set in the tech sector. Receiving intensive training in multiple
         areas, from Data Analytics, to Java Development, to MERN stack
         development, I was able to upskill and hone in my coding skills. Many of
-        my trainings were facilitated with group capstone projects, further
+        my training sessions were facilitated with group capstone projects, further
         enabling my ability to collaborate and work with others on tech
         projects.
       </OutputText>

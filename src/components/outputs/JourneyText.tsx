@@ -10,13 +10,13 @@ export default function JourneyText() {
       <OutputText>
         I have always had a love for technology, even starting from a few years
         old and using the family computer through dial-up internet! My
-        curiousity always led me to explore the amazing things that computers
+        curiosity always led me to explore the amazing things that computers
         could do, often leading to me crashing it, but also allowing me to
         troubleshoot and fix it - I essentially fell in love and learnt through
         brute force. :)
       </OutputText>
       <OutputText>
-        Although this curiousty and passion remained throughout my life, I had
+        Although this curiosity and passion remained throughout my life, I had
         just never really considered IT as a career path for me, and so it never
         eventuated. This led me to explore a range of other opportunities and
         various domains, from business studies, to hospitality and manufacturing
