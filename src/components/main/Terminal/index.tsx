@@ -164,8 +164,9 @@ export default function Terminal() {
         )}{" "}
         <div>
           <div className={styles["input-container"]}>
-            <span className={styles["input-prefix-lower"]}>$ </span>
+            <label htmlFor="terminal-input" className={styles["input-prefix-lower"]} aria-label="Terminal Input">$ </label>
             <input
+              id="terminal-input"
               type="text"
               className={styles["input"]}
               ref={inputRef}
