@@ -5,7 +5,7 @@ export default function HelpText() {
   return (
     <>
       <OutputText addExtraLine={false}>
-        To navigate to a category, use one of the following commands:
+        Navigate using these commands:
       </OutputText>
       <OutputText addExtraLine={false} className={`${styles["pad-left-output"]} ${styles["bold-output"]}`}>
         about
@@ -29,7 +29,7 @@ export default function HelpText() {
         contact
       </OutputText>
 
-      <OutputText addExtraLine={false}>Additional commands:</OutputText>
+      <OutputText addExtraLine={false}>Other commands:</OutputText>
       <OutputText addExtraLine={false} className={`${styles["pad-left-output"]} ${styles["bold-output"]}`}>
         theme [-c] &lt;themename&gt;
       </OutputText>

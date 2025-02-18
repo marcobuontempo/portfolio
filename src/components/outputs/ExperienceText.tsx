@@ -8,28 +8,28 @@ export default function ExperienceText() {
         Infosys - Technology Associate (December 2021 - August 2023)
       </OutputText>
       <OutputText>
-        At Infosys, I was able to be exposed to the IT workforce and build up my
-        skill set in the tech sector. Receiving intensive training in multiple
-        areas, from Data Analytics, to Java Development, to MERN stack
-        development, I was able to upskill and hone in my coding skills. Many of
-        my training sessions were facilitated with group capstone projects, further
-        enabling my ability to collaborate and work with others on tech
-        projects.
+        At Infosys, I gained invaluable exposure to the IT workforce and enhanced
+        my technical skill set across multiple domains. I received intensive
+        training in areas such as Data Analytics, Java Development, and MERN stack
+        development, which allowed me to sharpen my coding abilities. Through
+        collaborative group capstone projects, I strengthened my teamwork and
+        problem-solving skills, working alongside others to deliver impactful tech
+        solutions. This experience has fueled my passion for continuous learning
+        and growth in the tech space.
       </OutputText>
-
+      
       <OutputText addExtraLine={false} className={styles["bold-output"]}>
-        Roma Foods - Production Supervisor & OHS Coordinator (February 2018 -
+        Roma Foods - Production Supervisor & OHS Coordinator (May 2017 -
         February 2021)
       </OutputText>
       <OutputText>
-        My experience in food manufacturing helped me develop my key skills in
-        the workforce, and enhanced my ability to work with others. By the end
-        of this journey, I was managing 2 production lines with multiple staff -
-        This involved constant scheduling, planning, and troubleshooting.
-        Similarly, it demanded daily problem solving, which was usually only
-        achievable by connecting with other departments in the business.
-        Ultimately, I gained the confidence in my resourcefulness, creativity,
-        and working in a team environment.
+        In my role at Roma Foods, I developed critical skills in management, 
+        problem-solving, and cross-department collaboration. Managing two production 
+        lines with a diverse team, I was responsible for scheduling, planning, and 
+        troubleshooting day-to-day operations. This role required quick thinking 
+        and adaptability, often collaborating with various departments to resolve 
+        challenges. Ultimately, I gained confidence in my resourcefulness, 
+        creativity, and ability to lead and work effectively within a team.
       </OutputText>
     </>
   );

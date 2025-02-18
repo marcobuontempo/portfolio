@@ -47,8 +47,13 @@ export default function ProjectsText() {
           </OutputText>
         </li>
         <li>
+          <OutputText addExtraLine={false}>
+            received contribution for an updated/modern UI redesign, which I have since implemented
+          </OutputText>
+        </li>
+        <li>
           <OutputText addExtraLine={true}>
-            tech stack: React (TypeScript) and Tailwind CSS
+            tech stack: React (TypeScript), Redux, React Router DOM, Recharts, Tanstack Tables, Axios, Tailwind CSS, Flamingo Finance REST API Service
           </OutputText>
         </li>
       </ul>
@@ -61,13 +66,6 @@ export default function ProjectsText() {
           referrerPolicy="no-referrer"
         >
           GitHub
-        </a>{" "}
-        <a
-          href="https://foss-front-row.marcobuontempo.com/"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          Website
         </a>{" "}
         <a
           href="https://www.youtube.com/watch?v=rvq_WHKXlh8"
@@ -94,9 +92,14 @@ export default function ProjectsText() {
           </OutputText>
         </li>
         <li>
+          <OutputText addExtraLine={false}>
+            allows both "User" and "Admin" account roles - with Admin-only dashboard available
+          </OutputText>
+        </li>
+        <li>
           <OutputText addExtraLine={true}>
             tech stack: full MERN stack (MongoDB, Express, React, Nodejs), input validations (frontend+backend), JWT
-            Auth, Redux, and Admin/User roles
+            Auth, Redux
           </OutputText>
         </li>
       </ul>
@@ -121,13 +124,13 @@ export default function ProjectsText() {
       <ul className={styles["list-output"]}>
         <li>
           <OutputText addExtraLine={false}>
-            the current website you're... looking at right now? entirely and
-            uniquely built by yours truly!
+            the current website you're looking at right now... entirely and
+            uniquely built by me, myself, and I!
           </OutputText>
         </li>
         <li>
           <OutputText addExtraLine={true}>
-            tech stack: React (TypeScript)
+            tech stack: React (TypeScript), Vite
           </OutputText>
         </li>
       </ul>
@@ -168,7 +171,7 @@ export default function ProjectsText() {
         </li>
         <li>
           <OutputText addExtraLine={true}>
-            tech stack: you guessed it... CSS!
+            tech stack: you guessed it... CSS! and of course, HTML
           </OutputText>
         </li>
       </ul>
@@ -193,13 +196,13 @@ export default function ProjectsText() {
       <ul className={styles["list-output"]}>
         <li>
           <OutputText addExtraLine={false}>
-            my first ever official web project: a simple task planner!
+            my first ever "full" web project: a simple front-end task planner!
           </OutputText>
         </li>
         <li>
           <OutputText addExtraLine={false}>
-            created collaboratively during Generation Australia's bootcamp, with
-            instructor guidance and training
+            created collaboratively in a team during Generation Australia's 
+            bootcamp, with instructor guidance and training
           </OutputText>
         </li>
         <li>

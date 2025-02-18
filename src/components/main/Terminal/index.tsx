@@ -30,8 +30,7 @@ const initialOutput = (
   <>
     {prefixMessage}
     <OutputText>
-      Hey! Welcome to Marco Buontempo's portfolio. Thanks for visiting, let's
-      explore! :)
+      Hey! Welcome to Marco Buontempo's portfolio.
     </OutputText>
     <HelpText />
   </>

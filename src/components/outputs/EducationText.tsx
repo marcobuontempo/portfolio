@@ -7,35 +7,51 @@ export default function EducationText() {
       <OutputText>
         <span className={styles["bold-output"]}>
           Academy Xi (Generation Australia) - Front-End Web Development Bootcamp
+          <span className={styles["italic-output"]}> [2021]</span>
         </span>
         <p className={styles["pad-left-output"]}>
-          An intensive full-time web development bootcamp with over 520
-          dedicated hours. I was introduced to HTML, CSS, and JavaScript (among
-          others) as we learnt about frontend technologies, as well as other
-          important areas such as Git and GitHub. Additionally, we regularly
-          practised soft-skills and mental exercises to enable us to excel
-          with others in the workplace.
+          An intensive, full-time web development bootcamp where I completed over
+          520 hours of hands-on learning. This program introduced me to core web
+          technologies, including HTML, CSS, JavaScript, and Git/GitHub, while also
+          covering key concepts for front-end development. We honed both technical
+          and soft skills, with a focus on effective collaboration and mental
+          exercises to prepare us for success in the workplace.
         </p>
       </OutputText>
 
       <OutputText>
         <span className={styles["bold-output"]}>
           Monash University - Bachelor of Business (Econometrics & Marketing)
+          <span className={styles["italic-output"]}> [2017]</span>
         </span>
         <p className={styles["pad-left-output"]}>
-          Learned general knowledge of business sectors, such as accounting,
-          economics, law, etc. Focused my units towards marketing and
-          econometrics, as these were my most enjoyable and appealing fields.
-          This was also my first exposure in working in teams to deliver large
-          projects.
+          I studied a broad range of business disciplines, with a focus on marketing
+          and econometrics, my areas of keen interest. This provided me with
+          foundational business knowledge and insights into data analysis and
+          consumer behavior. It was also my first exposure to working within teams
+          to deliver large-scale projects, which helped me develop strong
+          collaboration and project management skills.
         </p>
       </OutputText>
+
       <OutputText>
-        <span className={styles["bold-output"]}>Salesian College - VCE</span>
+        <span className={styles["bold-output"]}>
+          Salesian College - VCE
+          <span className={styles["italic-output"]}> [2014]</span>
+        </span>
         <p className={styles["pad-left-output"]}>
           Subjects: English, Further Maths, Maths Methods, Physics, Business
           Management
         </p>
+      </OutputText>
+
+      <OutputText>
+        <p className={styles["bold-output"]}>Certifications:</p>
+        <ul>
+          <li>CompTIA A+ (in-progress)</li>
+          <li>Microsoft Azure Fundamentals AZ-900</li>
+          <li>Harvard CS50x</li>
+        </ul>
       </OutputText>
     </>
   );
