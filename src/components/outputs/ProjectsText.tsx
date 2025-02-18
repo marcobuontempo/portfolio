@@ -4,11 +4,6 @@ import styles from "./styles.module.css";
 export default function ProjectsText() {
   return (
     <>
-      <OutputText>
-        Please note that ALL of these were created WITHOUT tutorial guidance,
-        unless otherwise stated. Enjoy!
-      </OutputText>
-
       <OutputText addExtraLine={false}>
         1. <span className={styles["bold-output"]}>Flamboyance Dashboard</span>{" "}
         <a
