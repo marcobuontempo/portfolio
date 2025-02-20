@@ -3,13 +3,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.8);
   color: var(--output-text-colour);
   font-family: monospace;
   font-size: 1rem;
   position: relative;
   border-radius: 5px;
   box-shadow: 0px 0px 25px 3px black;
+  overflow: hidden;
 }
 
 .toolbar {
@@ -38,7 +39,7 @@
   padding: 2px;
   background: var(--output-bg-colour);
   scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
-  }
+}
 
 .output-prefix {
   color: var(--output-prefix-colour);

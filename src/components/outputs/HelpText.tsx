@@ -33,7 +33,7 @@ export default function HelpText() {
       <OutputText addExtraLine={false} className={`${styles["pad-left-output"]} ${styles["bold-output"]}`}>
         theme [-c] &lt;themename&gt;
       </OutputText>
-      <OutputText addExtraLine={false} className={`${styles["pad-left-output"]} ${styles["italic-output"]}`}>
+      <OutputText addExtraLine={false} className={`${styles["double-pad-left-output"]} ${styles["italic-output"]}`}>
         available themes: light, dark, neo, solarized
       </OutputText>
       <OutputText addExtraLine={true} className={`${styles["pad-left-output"]} ${styles["bold-output"]}`}>

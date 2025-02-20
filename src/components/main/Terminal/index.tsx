@@ -16,6 +16,7 @@ import ExperienceText from "../../outputs/ExperienceText";
 import EducationText from "../../outputs/EducationText";
 import ContactText from "../../outputs/ContactText";
 import JourneyText from "../../outputs/JourneyText";
+import HeroTypeWriter from "../HeroTypeWriter";
 
 const themes = ["light", "dark", "neo", "solarized"];
 
@@ -30,7 +31,7 @@ const initialOutput = (
   <>
     {prefixMessage}
     <OutputText>
-      Hey! Welcome to Marco Buontempo's portfolio.
+      <HeroTypeWriter>Hello world! Welcome to Marco Buontempo's portfolio.</HeroTypeWriter>
     </OutputText>
     <HelpText />
   </>
@@ -172,6 +173,7 @@ export default function Terminal() {
               onKeyDown={enterInput}
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
+              autoComplete="off"
             />
           </div>
         </div>

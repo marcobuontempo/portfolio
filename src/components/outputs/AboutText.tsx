@@ -14,8 +14,8 @@ export default function AboutText() {
         ways to create efficient, user-friendly, and scalable solutions. I'm constantly 
         learning and exploring new technologies to stay ahead in the ever-evolving tech 
         landscape, refining my skills to build better products. I also strive to 
-        prioritise accessibility, ensuring that the websites I build are as inclusive 
-        and usable as possible.
+        prioritise accessibility in major projects, ensuring that the websites I build 
+        are as inclusive and usable as possible.
       </OutputText>
       <OutputText>
         Beyond technology, I enjoy traveling, exploring new ideas, and spending time 

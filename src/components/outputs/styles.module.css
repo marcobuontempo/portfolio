@@ -9,3 +9,7 @@
 .pad-left-output {
   padding-left: 2ch;
 }
+
+.double-pad-left-output {
+  padding-left: 4ch;
+}

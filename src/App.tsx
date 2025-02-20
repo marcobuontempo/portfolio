@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import Terminal from "./components/main/Terminal";
 import AnimatedCursor from "react-animated-cursor";
 
+const defaultTheme = "solarized";
+
 function App() {
   console.log(
     `%cHello from the console!%c
@@ -14,14 +16,14 @@ function App() {
   useEffect(() => {
     // Check local storage for 'theme' setting
     const storedTheme = localStorage.getItem("theme");
-    const theme = "theme-" + (storedTheme || "dark"); // Use 'default' if no theme is found
+    const theme = "theme-" + (storedTheme || defaultTheme); // Use 'default' if no theme is found
 
     // Apply the theme class to the body element
-    document.body.classList.add(theme);
+    document.documentElement.classList.add(theme);
 
     // Optional: Cleanup function to remove the theme class if needed
     return () => {
-      document.body.classList.remove(theme);
+      document.documentElement.classList.remove(theme);
     };
   }, []);
 
