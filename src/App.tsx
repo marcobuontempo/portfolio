@@ -1,15 +1,14 @@
 import { useEffect } from "react";
 import Terminal from "./components/main/Terminal";
+import AnimatedCursor from "react-animated-cursor";
 
 function App() {
   console.log(
     `%cHello from the console!%c
-    %cYou found me! 🎉
-    %c- Love from Marco Buontempo xx`,
-    "color: #ff5722; font-size: 18px; font-weight: bold;",
+    %c- Marco Buontempo xox`,
+    "color: #3498db; font-size: 18px; font-weight: bold;",
     "color: #000000; font-size: 16px;",
-    "color: #4caf50; font-size: 16px; font-style: italic;",
-    "color: #2196f3; font-size: 16px;"
+    "color: #1abc9c; font-size: 16px; font-style: italic;",
   );
 
   useEffect(() => {
@@ -28,6 +27,20 @@ function App() {
 
   return (
     <>
+      <AnimatedCursor
+        color="255, 255, 255"
+        innerSize={10}
+        innerStyle={{
+          background: "rgba(255, 255, 255, 0.5)",
+          border: "2px solid black"
+        }}
+        outerSize={26}
+        outerScale={3}
+        outerStyle={{
+          border: "2px solid rgba(255, 255, 255, 0.1)"
+        }}
+        trailingSpeed={8}
+      />
       <Terminal />
     </>
   );
