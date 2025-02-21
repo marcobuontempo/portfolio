@@ -13,26 +13,6 @@
   animation: background-disappear 500ms var(--animation-delay, 5s) linear forwards; /* --animation-delay is set on component using javascript */
 }
 
-.typewriter-text {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0.5em;
-  color: var(--output-text-colour);
-  font-size: 3rem;
-  line-height: 1em;
-}
-
-.hero-text {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.hero-word {
-  position: relative;
-  z-index: 50;
-  visibility: hidden;
-}
-
 @keyframes background-disappear {
   from {
     transform: scale(1);
@@ -46,6 +26,38 @@
     background: var(--output-bg-colour);
     border-radius: 100%;
   }
+}
+
+.typewriter-text {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5em;
+  color: var(--output-text-colour);
+  font-size: 3rem;
+  line-height: 1em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 6px;
+  background-color: var(--output-text-colour);
+  margin-left: 2px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.hero-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero-word {
+  position: relative;
+  z-index: 50;
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 768px) {

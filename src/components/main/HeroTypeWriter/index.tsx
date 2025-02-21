@@ -16,7 +16,7 @@ export default function HeroTypeWriter({ children }: Props) {
   const [isTypingDone, setIsTypingDone] = useState(false);
 
   const letterDelay = 90; // Speed of each letter (in 1st animation)
-  const delayBeforeStart = 200; // Delay before starting animation to remove hero (i.e. 2nd animation), triggered *after* 1st animation finishes
+  const delayBeforeStart = 1500; // Delay before starting animation to remove hero (i.e. 2nd animation), triggered *after* 1st animation finishes
   const wordDelay = 150;  // Delay between each word being removed from hero (in 2nd animation)
   const delayBeforeEnd = 800;  // Delay before the final animation (defined in CSS), to minimise the hero element
 
@@ -36,6 +36,9 @@ export default function HeroTypeWriter({ children }: Props) {
             letterIndex++;
             setTimeout(typeNextLetter, letterDelay);
           } else {
+            // Add a space
+            newTypedText[wordIndex] += " ";
+            setTypedText([...newTypedText]);
             // Move to the next word
             wordIndex++;
             letterIndex = 0;
@@ -68,7 +71,7 @@ export default function HeroTypeWriter({ children }: Props) {
       if (heroText.current && typewriterText.current) {
         setTimeout(() => {
           if (heroText.current && typewriterText.current) {
-            for (let i = 0; i < typewriterText.current.children.length; i++) {
+            for (let i = 0; i < typewriterText.current.children.length - 1; i++) {  // 1 less than total children, as we exclude the cursor <span>
               setTimeout(() => {
                 if (heroText.current && typewriterText.current) {
                   const heroNode = heroText.current.children[i] as HTMLElement;
@@ -102,8 +105,9 @@ export default function HeroTypeWriter({ children }: Props) {
       <div className={styles["typewriter-main"]} style={{ "--animation-delay": `${(children.length * letterDelay) + delayBeforeStart + (words.length * wordDelay) + delayBeforeEnd}ms` } as CSSProperties}>
         <div className={styles["typewriter-text"]} ref={typewriterText}>
           {typedText.map((word, i) => (
-            <span key={i}>{word}&nbsp;</span>
+            <span key={i}>{word}</span>
           ))}
+          <span className={styles["cursor"]} />
         </div>
       </div>
     </div>

@@ -42,7 +42,7 @@ body {
   --link-colour: blue;
   --bg-primary: rgb(220, 220, 220);
   --bg-secondary: rgba(255, 69, 0, 0.3);
-  --hero-bg-colour:rgba(250, 245, 235, 0.9);
+  --hero-bg-colour:rgba(250, 245, 235, 0.93);
 }
 
 .theme-dark {
