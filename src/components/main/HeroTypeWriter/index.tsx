@@ -23,6 +23,8 @@ export default function HeroTypeWriter({ children }: Props) {
   // 1st Animation - Typewrite each letter of text
   useEffect(() => {
     const handleLoad = () => {
+      document.documentElement.style.pointerEvents = "none"; // Disable all webpage interactions
+      
       let wordIndex = 0;
       let letterIndex = 0;
 
@@ -80,13 +82,16 @@ export default function HeroTypeWriter({ children }: Props) {
                   heroNode.style.zIndex = "20";
                   heroNode.style.visibility = "visible";
                   typewriterNode.style.display = "none";
-                  // TODO: play sound
                 }
               }, i * wordDelay);
             }
           }
         }, delayBeforeStart);
       }
+
+      setTimeout(() => {
+        document.documentElement.style.pointerEvents = "auto"; // Re-enable all webpage interactions
+      }, delayBeforeStart + (children.length * wordDelay));
     };
 
     handleLoad();
