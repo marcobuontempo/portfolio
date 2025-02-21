@@ -9,8 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--output-bg-colour);
-  animation: background-disappear 500ms 5s linear forwards;
+  background: var(--hero-bg-colour);
+  animation: background-disappear 500ms var(--animation-delay, 5s) linear forwards; /* --animation-delay is set on component using javascript */
 }
 
 .typewriter-text {
@@ -37,9 +37,19 @@
   from {
     transform: scale(1);
     opacity: 1;
+    background: var(--hero-bg-colour);
+    border-radius: 0;
   }
   to {
     transform: scale(0);
     opacity: 0;
+    background: var(--output-bg-colour);
+    border-radius: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .typewriter-main {
+    padding: 0;
   }
 }

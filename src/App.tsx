@@ -33,13 +33,13 @@ function App() {
         color="255, 255, 255"
         innerSize={10}
         innerStyle={{
-          background: "rgba(255, 255, 255, 0.5)",
-          border: "2px solid black"
+          background: "var(--prefix-upper-colour)",
+          border: "2px solid black",
         }}
         outerSize={26}
         outerScale={3}
         outerStyle={{
-          border: "2px solid rgba(255, 255, 255, 0.1)"
+          border: "1px solid var(--output-text-colour)",
         }}
         trailingSpeed={8}
       />

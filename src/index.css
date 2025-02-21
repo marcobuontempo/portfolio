@@ -31,19 +31,6 @@ body {
   }
 }
 
-.theme-dark {
-  --toolbar-text-colour: silver;
-  --toolbar-bg-colour: black;
-  --prefix-upper-colour: lime;
-  --prefix-upper-secondary-colour: magenta;
-  --output-prefix-colour: gold;
-  --output-text-colour: white;
-  --output-bg-colour: rgba(0, 0, 0, 0.9);
-  --link-colour: cyan;
-  --bg-primary: rgb(180, 180, 180);
-  --bg-secondary: rgba(255, 0, 255, 0.25);
-}
-
 .theme-light {
   --toolbar-text-colour: white;
   --toolbar-bg-colour: darkred;
@@ -55,6 +42,21 @@ body {
   --link-colour: blue;
   --bg-primary: rgb(220, 220, 220);
   --bg-secondary: rgba(255, 69, 0, 0.3);
+  --hero-bg-colour:rgba(250, 245, 235, 0.9);
+}
+
+.theme-dark {
+  --toolbar-text-colour: silver;
+  --toolbar-bg-colour: black;
+  --prefix-upper-colour: lime;
+  --prefix-upper-secondary-colour: magenta;
+  --output-prefix-colour: gold;
+  --output-text-colour: white;
+  --output-bg-colour: rgba(0, 0, 0, 0.9);
+  --link-colour: cyan;
+  --bg-primary: rgb(180, 180, 180);
+  --bg-secondary: rgba(255, 0, 255, 0.25);
+  --hero-bg-colour:rgba(0, 0, 0, 0.9);
 }
 
 .theme-neo {
@@ -68,6 +70,7 @@ body {
   --link-colour: green;
   --bg-primary: rgb(60, 60, 60);
   --bg-secondary: rgba(0, 255, 0, 0.3);
+  --hero-bg-colour:rgba(0, 0, 0, 0.9);
 }
 
 .theme-solarized {
@@ -81,6 +84,7 @@ body {
   --link-colour: #268bd2;
   --bg-primary: rgb(200, 200, 200);
   --bg-secondary: rgba(0, 0, 0, 0.2);
+  --hero-bg-colour:rgba(0, 43, 54, 0.97);
 }
 
 @media only screen and (max-width: 768px) {
