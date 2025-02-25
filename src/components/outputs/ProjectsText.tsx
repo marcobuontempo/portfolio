@@ -37,7 +37,7 @@ export default function ProjectsText() {
         </li>
         <li>
           <OutputText addExtraLine={false}>
-            1st place 'Dashboard-Athon' winner, as a solo dev (including ~AUD$3k
+            1st place "Dashboard-Athon" winner, as a solo dev (including ~AUD$3k
             prize money)!{" "}
           </OutputText>
         </li>
@@ -54,7 +54,42 @@ export default function ProjectsText() {
       </ul>
 
       <OutputText addExtraLine={false}>
-        2. <span className={styles["bold-output"]}>FOSS Front Row</span>{" "}
+        2. <span className={styles["bold-output"]}>Tonnetto Chess Engine</span>{" "}
+        <a
+          href="https://github.com/marcobuontempo/tonnetto"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          GitHub
+        </a>{" "}
+        <a
+          href="https://chess.marcobuontempo.com/"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          GUI Demo
+        </a>
+      </OutputText>
+      <ul className={styles["list-output"]}>
+        <li>
+          <OutputText addExtraLine={false}>
+            an entirely custom-made chess engine, with no runtime dependencies
+          </OutputText>
+        </li>
+        <li>
+          <OutputText addExtraLine={false}>
+            uses a board-centric design, implementing multiple chess programming concepts
+          </OutputText>
+        </li>
+        <li>
+          <OutputText addExtraLine={true}>
+            tech stack: TypeScript
+          </OutputText>
+        </li>
+      </ul>
+
+      <OutputText addExtraLine={false}>
+        3. <span className={styles["bold-output"]}>FOSS Front Row</span>{" "}
         <a
           href="https://github.com/marcobuontempo/foss-front-row"
           target="_blank"
@@ -100,7 +135,7 @@ export default function ProjectsText() {
       </ul>
 
       <OutputText addExtraLine={false}>
-        3. <span className={styles["bold-output"]}>Portfolio</span>{" "}
+        4. <span className={styles["bold-output"]}>Portfolio</span>{" "}
         <a
           href="https://github.com/marcobuontempo/portfolio"
           target="_blank"
@@ -131,7 +166,7 @@ export default function ProjectsText() {
       </ul>
 
       <OutputText addExtraLine={false}>
-        4. <span className={styles["bold-output"]}>Museum of CSS Art</span>{" "}
+        5. <span className={styles["bold-output"]}>Museum of CSS Art</span>{" "}
         <a
           href="https://github.com/marcobuontempo/mocssa"
           target="_blank"
@@ -172,7 +207,7 @@ export default function ProjectsText() {
       </ul>
 
       <OutputText addExtraLine={false}>
-        5. <span className={styles["bold-output"]}>Task Planner JWD</span>{" "}
+        6. <span className={styles["bold-output"]}>Task Planner JWD</span>{" "}
         <a
           href="https://github.com/marcobuontempo/Task-Planner-JWD"
           target="_blank"
