@@ -23,6 +23,8 @@ export default function HeroTypeWriter({ children }: Props) {
   // 1st Animation - Typewrite each letter of text
   useEffect(() => {
     const handleLoad = () => {
+      document.documentElement.style.pointerEvents = "none"; // Disable all webpage interactions
+      
       let wordIndex = 0;
       let letterIndex = 0;
 
@@ -71,18 +73,22 @@ export default function HeroTypeWriter({ children }: Props) {
       if (heroText.current && typewriterText.current) {
         setTimeout(() => {
           if (heroText.current && typewriterText.current) {
-            for (let i = 0; i < typewriterText.current.children.length - 1; i++) {  // 1 less than total children, as we exclude the cursor <span>
-              setTimeout(() => {
-                if (heroText.current && typewriterText.current) {
-                  const heroNode = heroText.current.children[i] as HTMLElement;
-                  const typewriterNode = typewriterText.current.children[i] as HTMLElement;
-
-                  heroNode.style.zIndex = "20";
-                  heroNode.style.visibility = "visible";
-                  typewriterNode.style.display = "none";
-                  // TODO: play sound
-                }
-              }, i * wordDelay);
+            for (let i = 0; i < typewriterText.current.children.length; i++) {
+              if (i === typewriterText.current.children.length - 1) {
+                document.documentElement.style.pointerEvents = "auto"; // Re-enable all webpage interactions
+                // Don't do anything else here, this is the last child and therefore the last span (i.e. blinking cursor <span>)
+              } else {
+                // These are regular word <spans>, therefore we want to remove them from hero and add to terminal output  
+                setTimeout(() => {
+                  if (heroText.current && typewriterText.current) {
+                    const heroNode = heroText.current.children[i] as HTMLElement;
+                    const typewriterNode = typewriterText.current.children[i] as HTMLElement;
+                    heroNode.style.zIndex = "20";
+                    heroNode.style.visibility = "visible";
+                    typewriterNode.style.display = "none";
+                  }
+                }, i * wordDelay);
+              }
             }
           }
         }, delayBeforeStart);
