@@ -48,7 +48,7 @@ export default function EducationText() {
       <OutputText>
         <p className={styles["bold-output"]}>Certifications:</p>
         <ul>
-          <li>CompTIA A+ (in-progress)</li>
+          <li>CompTIA A+</li>
           <li>Microsoft Azure Fundamentals AZ-900</li>
           <li>Harvard CS50x</li>
         </ul>
