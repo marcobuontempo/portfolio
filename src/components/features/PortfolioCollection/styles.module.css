@@ -1,0 +1,9 @@
+.portfolio {
+
+}
+
+.card {
+  width: 18rem;
+  height: 100%;
+  border: 1px solid red;
+}

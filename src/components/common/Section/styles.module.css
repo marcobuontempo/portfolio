@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 50dvh;
+}
+
+.heading {
+  width: 100%;
+  text-align: end;
+  font-size: 4rem;
+}
