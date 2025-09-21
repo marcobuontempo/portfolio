@@ -1,0 +1,8 @@
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.button {
+  cursor: pointer;
+}
