@@ -9,6 +9,7 @@ const Hero = ({}: Props) => {
     <header className={styles.hero}>
       <AsciiText3d />
       <Nav
+        className={styles.nav}
         links={[
           { to: "about", text: "About" },
           { to: "portfolio", text: "Portfolio" },

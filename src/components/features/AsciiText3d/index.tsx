@@ -6,12 +6,17 @@ import {
   Text3D,
 } from "@react-three/drei";
 import fontUrl from "../../../assets/IBM Plex Mono_Regular.json?url";
-// import fontUrl from "../../../assets/IBM Plex Mono_Bold.json?url";
 import { useEffect, useRef } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import styles from "./styles.module.css";
+import rotateIcon from "../../../assets/rotate-360.png";
 
 const FallbackDisplay = () => {
-  return <h1>Marco Buontempo</h1>;
+  return (
+    <div className={styles.fallback}>
+      <h1>MARCO BUONTEMPO</h1>
+    </div>
+  );
 };
 
 const Scene = () => {
@@ -58,29 +63,41 @@ const AsciiText3d = () => {
   }, []);
 
   return (
-    // Catch if WebGL fails
-    <ErrorBoundary FallbackComponent={FallbackDisplay}>
-      <Canvas
-        orthographic
-        camera={{ position: [0, 0, 100], zoom: 100 }}
-        fallback={<FallbackDisplay />}
-      >
-        <color attach="background" args={["black"]} />
-        <ambientLight intensity={1} />
-        <directionalLight position={[10, 10, 10]} />
+    <div className={styles.container}>
+      {/* Catch if WebGL fails */}
+      <ErrorBoundary FallbackComponent={FallbackDisplay}>
+        <div className={styles.container}>
+          <Canvas
+            orthographic
+            camera={{ position: [0, 0, 100], zoom: 100 }}
+            fallback={<FallbackDisplay />}
+            className={styles.canvas}
+          >
+            <color attach="background" args={["black"]} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 10]} />
 
-        <Scene />
+            <Scene />
 
-        <AsciiRenderer fgColor="green" bgColor="transparent" />
+            <AsciiRenderer fgColor="green" bgColor="transparent" />
 
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          minPolarAngle={0}
-          maxPolarAngle={2}
-        />
-      </Canvas>
-    </ErrorBoundary>
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              minPolarAngle={0}
+              maxPolarAngle={2}
+            />
+          </Canvas>
+          <img
+            src={rotateIcon}
+            className={styles.rotate}
+            alt="360 rotation"
+            width={36}
+            height={36}
+          />
+        </div>
+      </ErrorBoundary>
+    </div>
   );
 };
 

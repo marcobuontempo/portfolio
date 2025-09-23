@@ -1,24 +1,9 @@
 import InfiniteCarousel from "../../common/InfiniteCarousel";
 import Section from "../../common/Section";
 import styles from "./styles.module.css";
+import projects from "../../../data/projects.json";
 
 type Props = {};
-
-const cards = [
-  "Foo",
-  "Bar",
-  "Baz",
-  "Qux",
-  "Quux",
-  "Corge",
-  "Grault",
-  "Garply",
-  "Waldo",
-  "Fred",
-  "Plugh",
-  "Xyzzy",
-  "Thud",
-];
 
 const PortfolioCollection = ({}: Props) => {
   return (
@@ -28,9 +13,21 @@ const PortfolioCollection = ({}: Props) => {
       className={styles.portfolio}
     >
       <InfiniteCarousel speed={30}>
-        {cards.map((card, idx) => (
-          <div className={styles.card} key={`${card}-${idx}`}>
-            {card}
+        {projects.map((project, idx) => (
+          <div className={styles.card} key={idx}>
+            <h3>{project.title}</h3>
+            <ul>
+              {project.description.map((t, jdx) => (
+                <li key={jdx}>{t}</li>
+              ))}
+            </ul>
+            <ul>
+              {project.links.map((link) => (
+                <li key={link.name}>
+                  <a href={link.address}>{link.name}</a>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </InfiniteCarousel>
