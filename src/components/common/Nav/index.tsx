@@ -14,7 +14,10 @@ const Nav = ({ links, className, ...props }: Props) => {
   };
 
   return (
-    <nav {...props} className={className}>
+    <nav
+      {...props}
+      className={className ? `${styles.nav} ${className}` : styles.nav}
+    >
       <ul className={styles.links}>
         {links.map((link) => (
           <li key={link.to}>

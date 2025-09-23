@@ -4,9 +4,10 @@ import styles from "./styles.module.css";
 type Props = {
   children: ReactNode;
   speed?: number;
+  className?: string;
 };
 
-const InfiniteCarousel = ({ children, speed = 50 }: Props) => {
+const InfiniteCarousel = ({ children, speed = 50, className }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const lastTimeRef = useRef<number>(performance.now());
   const scrollAmountRef = useRef<number>(0);
@@ -42,7 +43,9 @@ const InfiniteCarousel = ({ children, speed = 50 }: Props) => {
 
   return (
     <div
-      className={styles.carousel}
+      className={
+        className ? `${styles.carousel} ${className}` : styles.carousel
+      }
       ref={containerRef}
       onPointerEnter={() => (pausedRef.current = true)}
       onPointerLeave={() => (pausedRef.current = false)}
