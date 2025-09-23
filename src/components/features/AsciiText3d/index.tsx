@@ -9,7 +9,7 @@ import fontUrl from "../../../assets/IBM Plex Mono_Regular.json?url";
 import { useEffect, useRef } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import styles from "./styles.module.css";
-import rotateIcon from "../../../assets/rotate-360.png";
+import { Md360 } from "react-icons/md";
 
 const FallbackDisplay = () => {
   return (
@@ -88,13 +88,7 @@ const AsciiText3d = () => {
               maxPolarAngle={2}
             />
           </Canvas>
-          <img
-            src={rotateIcon}
-            className={styles.rotate}
-            alt="360 rotation"
-            width={36}
-            height={36}
-          />
+          <Md360 className={styles.rotate} />
         </div>
       </ErrorBoundary>
     </div>

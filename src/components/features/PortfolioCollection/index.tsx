@@ -12,7 +12,7 @@ const PortfolioCollection = ({}: Props) => {
       id="portfolio"
       className={styles.portfolio}
     >
-      <InfiniteCarousel speed={30}>
+      <InfiniteCarousel className={styles.carousel} speed={30}>
         {projects.map((project, idx) => (
           <div className={styles.card} key={idx}>
             <h3>{project.title}</h3>

@@ -16,14 +16,16 @@
 }
 
 .rotate {
+  height: 3rem;
+  width: 3rem;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 10%;
   margin: auto;
-  filter: invert(1);
+  color: white;
   opacity: 0.1;
-  transform: scale(1) rotate(3deg);
+  transform: scale(1);
   animation: pulse 3s ease-in-out infinite alternate;
   pointer-events: none;
 }
@@ -31,11 +33,11 @@
 @keyframes pulse {
   from {
     opacity: 0.1;
-    transform: scale(1) rotate(3deg);
+    transform: scale(1);
   }
   to {
     opacity: 0.2;
-    transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1);
   }
 }
 
@@ -44,5 +46,4 @@
   text-align: center;
   font-size: 6rem;
   color: green;
-  cursor: default;
 }

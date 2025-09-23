@@ -9,5 +9,7 @@
   width: 100%;
   text-align: end;
   font-size: 4rem;
-  padding: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
+  cursor: default;
 }
