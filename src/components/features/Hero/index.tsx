@@ -1,4 +1,4 @@
-import AsciiText3d from "../../common/AsciiText3d";
+import AsciiText3d from "../AsciiText3d";
 import Nav from "../../common/Nav";
 import styles from "./styles.module.css";
 

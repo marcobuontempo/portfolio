@@ -1,9 +1,19 @@
 .links {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   padding: 2rem;
 }
 
 .button {
   cursor: pointer;
+  appearance: none;
+  font-size: 2rem;
+  color: ghostwhite;
+  background: none;
+  border: none;
+  text-transform: lowercase;
+}
+
+.button:hover {
+  text-decoration: underline;
 }
