@@ -6,6 +6,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  background: black;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    black,
+    rgb(12, 12, 12)
+  );
+}
+
+.nav {
+  padding-top: 0;
 }

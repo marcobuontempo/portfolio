@@ -5,7 +5,7 @@ type Props = HTMLAttributes<HTMLElement> & {
   links: { to: string; text: string }[];
 };
 
-const Nav = ({ links }: Props) => {
+const Nav = ({ links, className, ...props }: Props) => {
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -14,7 +14,7 @@ const Nav = ({ links }: Props) => {
   };
 
   return (
-    <nav>
+    <nav {...props} className={className}>
       <ul className={styles.links}>
         {links.map((link) => (
           <li key={link.to}>
@@ -22,7 +22,7 @@ const Nav = ({ links }: Props) => {
               className={styles.button}
               onClick={() => handleScroll(link.to)}
             >
-              {link.text}
+              <span className={styles.text}>{link.text}</span>
             </button>
           </li>
         ))}

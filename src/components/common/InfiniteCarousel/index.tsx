@@ -10,6 +10,7 @@ const InfiniteCarousel = ({ children, speed = 50 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const lastTimeRef = useRef<number>(performance.now());
   const scrollAmountRef = useRef<number>(0);
+  const pausedRef = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -19,13 +20,15 @@ const InfiniteCarousel = ({ children, speed = 50 }: Props) => {
       const deltaTime = (time - lastTimeRef.current) / 1000; // seconds
       lastTimeRef.current = time;
 
-      scrollAmountRef.current += speed * deltaTime;
+      if (!pausedRef.current) {
+        scrollAmountRef.current += speed * deltaTime;
 
-      if (scrollAmountRef.current >= container.scrollWidth / 2) {
-        scrollAmountRef.current = 0;
+        if (scrollAmountRef.current >= container.scrollWidth / 2) {
+          scrollAmountRef.current = 0;
+        }
+
+        container.scrollLeft = scrollAmountRef.current;
       }
-
-      container.scrollLeft = scrollAmountRef.current;
 
       requestAnimationFrame(step);
     };
@@ -38,11 +41,14 @@ const InfiniteCarousel = ({ children, speed = 50 }: Props) => {
   );
 
   return (
-    <div className={styles.carousel} ref={containerRef}>
+    <div
+      className={styles.carousel}
+      ref={containerRef}
+      onPointerEnter={() => (pausedRef.current = true)}
+      onPointerLeave={() => (pausedRef.current = false)}
+    >
       {duplicatedChildren.map((child, index) => (
-        <div key={index} className={styles.carouselItem}>
-          {child}
-        </div>
+        <div key={index}>{child}</div>
       ))}
     </div>
   );

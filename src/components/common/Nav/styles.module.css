@@ -5,15 +5,34 @@
 }
 
 .button {
+  position: relative;
   cursor: pointer;
   appearance: none;
-  font-size: 2rem;
-  color: ghostwhite;
+  font-size: 1.5rem;
   background: none;
+  color: white;
   border: none;
   text-transform: lowercase;
+  padding: 0 0.5rem;
+  width: 10rem;
+
+  &::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 
-.button:hover {
-  text-decoration: underline;
+.text {
+  position: relative;
+  z-index: 1;
 }

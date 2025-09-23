@@ -6,20 +6,33 @@ type Props = {};
 const About = ({}: Props) => {
   return (
     <Section title="About" id="about" className={styles.about}>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut hic
-        deleniti temporibus voluptate illum, culpa ea repudiandae quos a odio
-        aliquam nam in esse? Fugit voluptatem fuga saepe sapiente libero eum
-        placeat laboriosam eaque. Laudantium ut recusandae praesentium, omnis
-        eaque soluta pariatur, deserunt assumenda placeat laborum, dolorem quae
-        ipsum distinctio corrupti? Totam, architecto assumenda maxime,
-        asperiores soluta voluptas nihil hic veniam consectetur ipsa pariatur
-        iste minima voluptates culpa, ratione perspiciatis velit earum quia
-        voluptatibus? Aliquid illum maxime nam incidunt doloremque ipsa beatae,
-        placeat distinctio voluptas provident commodi iure laboriosam sequi
-        perferendis, aperiam nemo voluptate nobis eligendi expedita. Ipsum,
-        vitae rem!
-      </p>
+      <div className={styles.content}>
+        <p className={styles.bold}>
+          Hi! 👋 I'm Marco, a Full Stack Developer based in Melbourne,
+          Australia.
+        </p>
+        <p>
+          I'm passionate about building intuitive, impactful web experiences.
+          While I work across the full stack, my real focus is on frontend
+          development — where design, functionality, and user experience come
+          together.
+        </p>
+        <p>
+          I approach projects with a problem-solving mindset, aiming to build
+          efficient, user-friendly, and scalable solutions. I care deeply about
+          web accessibility and make it a priority in major projects, ensuring
+          the sites I build are inclusive for all users.
+        </p>
+        <p>
+          I'm also committed to continuous learning — always exploring new
+          technologies and refining my skills to deliver better results. Outside
+          of tech, I enjoy traveling, exploring new ideas, and spending time
+          with family and friends.
+        </p>
+        <p>
+          Always curious, always learning, always ready for the next challenge.
+        </p>
+      </div>
     </Section>
   );
 };
