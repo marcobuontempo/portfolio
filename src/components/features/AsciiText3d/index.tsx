@@ -56,7 +56,11 @@ const Scene = () => {
   );
 };
 
-const AsciiText3d = () => {
+type AsciiText3dProps = {
+  color?: string;
+};
+
+const AsciiText3d = ({ color = "white" }: AsciiText3dProps) => {
   useEffect(() => {
     // r3f bug workaround: reflow/resize on mount to force trigger canvas sizing
     requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
@@ -79,7 +83,11 @@ const AsciiText3d = () => {
 
             <Scene />
 
-            <AsciiRenderer fgColor="green" bgColor="transparent" />
+            <AsciiRenderer
+              fgColor={color}
+              bgColor="transparent"
+              resolution={0.17}
+            />
 
             <OrbitControls
               enableZoom={false}

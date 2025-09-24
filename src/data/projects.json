@@ -1,5 +1,23 @@
 [
   {
+    "title": "Portfolio",
+    "description": [
+      "the current website you're looking at right now!",
+      "entirely and uniquely built by me, myself, and I"
+    ],
+    "stack": ["React (TypeScript)", "Three.js", "R3F"],
+    "links": [
+      {
+        "name": "GitHub",
+        "address": "https://github.com/marcobuontempo/portfolio/"
+      },
+      {
+        "name": "Website",
+        "address": "https://www.marcobuontempo.com/"
+      }
+    ]
+  },
+  {
     "title": "Museum of CSS Art",
     "description": [
       "a creative project, exclusively using CSS styling tricks to create artworks and designs",
@@ -26,16 +44,7 @@
       "uses a board-centric design, implementing multiple chess programming concepts",
       "~1600+ ELO"
     ],
-    "stack": [
-      "React (TypeScript)",
-      "Redux",
-      "React Router DOM",
-      "Recharts",
-      "Tanstack Tables",
-      "Axios",
-      "Tailwind CSS",
-      "Flamingo Finance's REST API Service"
-    ],
+    "stack": ["TypeScript"],
     "links": [
       {
         "name": "GitHub",
@@ -54,7 +63,15 @@
       "1st place \"Dashboard-Athon\" winner, as a solo dev (including ~AUD$3k prize money)!",
       "received contribution for an updated/modern UI redesign, which I have since implemented"
     ],
-    "stack": ["TypeScript"],
+    "stack": [
+      "React (TypeScript)",
+      "Redux",
+      "Recharts",
+      "Tanstack Tables",
+      "Tailwind CSS",
+      "Axios",
+      "Flamingo Finance's REST API Service"
+    ],
     "links": [
       {
         "name": "GitHub",
@@ -69,10 +86,10 @@
   {
     "title": "FOSS Front Row",
     "description": [
-      "proof-of-concept project for an event ticketing system, using the \"MERN\" stack",
+      "proof-of-concept \"MERN\" stack project for an event ticketing system",
       "full CRUD application for event management (i.e create and manage your ticketed events)",
       "integrates QR code generation and scanning for event tickets",
-      "allows both \"User\" and \"Admin\" account roles - with Admin-only dashboard available"
+      "allows both \"User\" and \"Admin\" account roles"
     ],
     "stack": ["MongoDB", "Express", "React", "Nodejs", "JWT Auth", "Redux"],
     "links": [
@@ -87,30 +104,12 @@
     ]
   },
   {
-    "title": "Portfolio",
-    "description": [
-      "the current website you're looking at right now!",
-      "entirely and uniquely built by me, myself, and I"
-    ],
-    "stack": ["React (TypeScript)", "Three.js", "R3F"],
-    "links": [
-      {
-        "name": "GitHub",
-        "address": "https://github.com/marcobuontempo/portfolio/"
-      },
-      {
-        "name": "Website",
-        "address": "https://www.marcobuontempo.com/"
-      }
-    ]
-  },
-  {
     "title": "Task Planner JWD",
     "description": [
       "my first ever \"full\" web project: a very simple front-end task planner!",
       "created collaboratively in a team during Generation Australia's bootcamp, with instructor guidance and training"
     ],
-    "stack": ["Vanilla JavaScript", "CSS"],
+    "stack": ["HTML", "CSS", "JavaScript"],
     "links": [
       {
         "name": "GitHub",

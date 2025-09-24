@@ -1,3 +1,23 @@
 .footer {
+  position: relative;
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  background: lightgrey;
+}
+
+.quote {
+  grid-column: 2 / 5;
+  grid-row: 2 / 5;
+  background: grey;
+}
+
+.copyright {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 1rem 2rem;
+  background: black;
+  color: white;
 }

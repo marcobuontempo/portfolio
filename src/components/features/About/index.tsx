@@ -26,7 +26,7 @@ const About = ({}: Props) => {
         <p>
           I'm also committed to continuous learning — always exploring new
           technologies and refining my skills to deliver better results. Outside
-          of tech, I enjoy traveling, exploring new ideas, and spending time
+          of tech, I enjoy traveling, exploring new hobbies, and spending time
           with family and friends.
         </p>
         <p>

@@ -12,22 +12,33 @@ const PortfolioCollection = ({}: Props) => {
       id="portfolio"
       className={styles.portfolio}
     >
-      <InfiniteCarousel className={styles.carousel} speed={30}>
-        {projects.map((project, idx) => (
-          <div className={styles.card} key={idx}>
-            <h3>{project.title}</h3>
-            <ul>
-              {project.description.map((t, jdx) => (
-                <li key={jdx}>{t}</li>
-              ))}
-            </ul>
-            <ul>
-              {project.links.map((link) => (
-                <li key={link.name}>
-                  <a href={link.address}>{link.name}</a>
-                </li>
-              ))}
-            </ul>
+      <InfiniteCarousel className={styles.carousel} speed={50}>
+        {projects.map((project) => (
+          <div className={styles.card} key={project.title}>
+            <div className={styles.subcontainer}>
+              <h3 className={styles.title}>{project.title}</h3>
+              <ul className={styles.description}>
+                {project.description.map((d) => (
+                  <li key={d}>{d}</li>
+                ))}
+              </ul>
+            </div>
+            <footer className={styles.subcontainer}>
+              {/* <p className={styles.stack}>{project.stack.join(", ")}</p> */}
+              <ul className={styles.stack}>
+                {project.stack.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+
+              <ul className={styles.links}>
+                {project.links.map((link) => (
+                  <li key={link.name}>
+                    <a href={link.address}>{link.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </footer>
           </div>
         ))}
       </InfiniteCarousel>
