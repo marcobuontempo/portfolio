@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 
 type Props = {};
 
-const icons = [
+const characters = [
   "Foo",
   "Bar",
   "Baz",
@@ -16,14 +16,19 @@ const icons = [
   "Plugh",
   "Xyzzy",
   "Thud",
+  "Blarg",
+  "Mum",
+  "Puppu",
 ];
 
 const Footer = ({}: Props) => {
   return (
     <footer className={styles.footer}>
-      {icons.map((icon) => (
+      {characters.map((icon) => (
         <div key={icon}>{icon}</div>
       ))}
+      <p className={styles.quote}>Hello World.</p>
+      <span className={styles.copyright}>Marco Buontempo &copy;</span>
     </footer>
   );
 };
