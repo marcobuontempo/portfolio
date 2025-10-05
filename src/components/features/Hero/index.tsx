@@ -7,7 +7,7 @@ type Props = {};
 const Hero = ({}: Props) => {
   return (
     <header className={styles.hero}>
-      <AsciiText3d color="green" />
+      <AsciiText3d color="#5FF" />
       <Nav
         className={styles.nav}
         links={[

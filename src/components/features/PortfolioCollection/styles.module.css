@@ -62,7 +62,6 @@ footer.subcontainer {
     text-wrap: nowrap;
     background: rgb(255, 255, 255);
     opacity: 0.5;
-    border-radius: 5px;
   }
 
   & li:hover {
