@@ -26,17 +26,17 @@ const Scene = () => {
   useFrame((_state, delta) => {
     if (!ref.current) return;
 
-    ref.current.rotation.y += (direction.current * delta) / 10;
+    ref.current.rotation.y += (direction.current * delta) / 15;
 
     if (ref.current.rotation.y >= 0.3) {
       direction.current = -1;
-    } else if (ref.current.rotation.y <= -0.25) {
+    } else if (ref.current.rotation.y <= 0.05) {
       direction.current = 1;
     }
   });
 
   return (
-    <Center rotation={[0, -0.25, 0]} ref={ref}>
+    <Center rotation={[0, 0.05, 0]} ref={ref}>
       <Text3D
         font={fontUrl}
         curveSegments={20}
@@ -73,7 +73,7 @@ const AsciiText3d = ({ color = "white" }: AsciiText3dProps) => {
         <div className={styles.container}>
           <Canvas
             orthographic
-            camera={{ position: [0, 0, 100], zoom: 100 }}
+            camera={{ position: [0, -50, 100], zoom: 100 }}
             fallback={<FallbackDisplay />}
             className={styles.canvas}
           >
