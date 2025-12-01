@@ -6,7 +6,15 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  background: lightgrey;
+  overflow: hidden;
+}
+
+.footer::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(90, 0, 255, 0.05), transparent);
 }
 
 .background {
@@ -16,23 +24,32 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  mask-image: linear-gradient(to bottom, transparent 10%, black);
 }
 
 .quote {
   padding: 0.5rem;
+  text-align: center;
+  font-size: clamp(0.5rem, 4vw, 1rem);
   z-index: 1;
-  color: white;
-  background: black;
+  opacity: 0.5;
+  transition: opacity 500ms ease;
+}
+
+.quote:hover {
+  opacity: 1;
+  cursor: default;
+  background: rgba(255, 255, 255, 0.033);
+  box-shadow: 0px 0px 50px 50px rgba(255, 255, 255, 0.033);
 }
 
 .bottom {
   position: absolute;
-  bottom: 0;
+  bottom: -2.5rem;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 5rem;
-  padding-top: 1.5rem;
+  height: 5.5rem;
   overflow: hidden;
   z-index: 1;
 }
@@ -45,12 +62,13 @@
   width: fit-content;
   height: 2.5rem;
   background: black;
-  color: white;
+  color: ghostwhite;
+  border-top-right-radius: 2px;
   text-align: center;
 }
 
 .characters {
-  height: 1rem;
+  height: 2rem;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -62,15 +80,16 @@
 .character {
   display: flex;
   justify-content: center;
-  width: 5rem;
-  height: 5rem;
-  min-width: 5rem;
-  min-height: 5rem;
+  font-size: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
   transform: translateY(0rem);
   transition: transform 300ms ease-in-out;
 
   &:hover {
     transform-origin: bottom center;
-    transform: translateY(-4rem);
+    transform: translateY(-2.5rem);
   }
 }

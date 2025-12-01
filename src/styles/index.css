@@ -7,9 +7,19 @@
   font-display: swap;
 }
 
+:root {
+  background: black;
+  color: whitesmoke;
+}
+
 :root,
 * {
   font-family: "Roboto Mono";
   font-optical-sizing: auto;
   font-style: normal;
+  line-height: 1.5;
+}
+
+h1 {
+  line-height: 1;
 }

@@ -7,6 +7,21 @@
   height: 100%;
 }
 
+.ascii {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .ascii {
+    transform: translateX(1.5rem);
+  }
+}
+
 .canvas {
   cursor: grab;
 }
@@ -28,6 +43,7 @@
   transform: scale(1);
   animation: pulse 3s ease-in-out infinite alternate;
   pointer-events: none;
+  filter: drop-shadow(0 0 4px white);
 }
 
 @keyframes pulse {
