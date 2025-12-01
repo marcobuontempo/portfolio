@@ -20,16 +20,18 @@ const Contact = ({}: Props) => {
     e.preventDefault();
     setSubmitStatus("pending");
 
-    fetch("https://formsubmit.co/ajax/marcobuontempo96@gmail.com", {
+    fetch("https://formsubmit.co/ajax/56c7e613af460d98c9bdf36e307175f6", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: JSON.stringify({
-        ...formData,
-        _subject: "Contact Form Submission - marcobuontempo.com",
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
         _replyto: formData.email,
+        _subject: "Contact Form Submission - marcobuontempo.com",
         _template: "table",
       }),
     })
@@ -66,6 +68,7 @@ const Contact = ({}: Props) => {
             onChange={handleChange}
             type="text"
             placeholder="NAME*"
+            disabled={submitStatus === "success"}
           />
           <input
             className={styles.input}
@@ -75,6 +78,7 @@ const Contact = ({}: Props) => {
             onChange={handleChange}
             type="email"
             placeholder="EMAIL*"
+            disabled={submitStatus === "success"}
           />
           <textarea
             className={styles.input}
@@ -82,6 +86,7 @@ const Contact = ({}: Props) => {
             value={formData.message}
             onChange={handleChange}
             placeholder="MESSAGE*"
+            disabled={submitStatus === "success"}
           />
           <button
             className={styles.input}
