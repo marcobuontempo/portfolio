@@ -1,15 +1,37 @@
 .section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
-  min-height: 50vh;
+  min-height: 100vh;
 }
 
 .heading {
   width: 100%;
   text-align: end;
-  font-size: 4rem;
-  padding-right: 0.5rem;
-  padding-top: 1rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  padding: 0 0.5rem;
+  padding-bottom: 0;
   cursor: default;
+}
+
+.headingword {
+  position: relative;
+}
+
+.headingword::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0.25rem;
+  width: 100%;
+  height: 1rem;
+  pointer-events: none;
+  background: rgb(255, 255, 255);
+  opacity: 0.05;
+  transition: opacity 500ms ease;
+}
+
+.section:hover .headingword::after {
+  opacity: 0.1;
 }

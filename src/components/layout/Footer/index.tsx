@@ -1,6 +1,6 @@
 import Character from "../../common/Character";
+import SwirlBackground from "../../common/SwirlBackground";
 import styles from "./styles.module.css";
-import backgroundVideo from "../../../assets/background.mp4";
 
 type Props = {};
 
@@ -35,12 +35,19 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 const Footer = ({}: Props) => {
   return (
     <footer className={styles.footer}>
-      <video autoPlay muted loop className={styles.background}>
-        <source src={backgroundVideo} type="video/mp4" />
-      </video>
+      <SwirlBackground
+        className={styles.background}
+        color1="#16003e"
+        color2="#000"
+        color3="#000"
+        spinSpeed={2}
+        isRotate={false}
+        mouseInteraction={false}
+        pixelFilter={1440}
+      />
 
-      <p className={styles.quote}>
-        There is no end, for all we have is time.
+      <p className={styles.quote} data-hoverable="true">
+        the best work is quietly seen.
       </p>
 
       <div className={styles.bottom}>
@@ -49,7 +56,10 @@ const Footer = ({}: Props) => {
           {shuffleArray([...characters, ...characters]).map(
             (character, idx) => (
               <li key={`${character}-${idx}`} className={styles.character}>
-                <Character name={character} />
+                <Character
+                  name={character}
+                  colours={["#4ff", "#16003e", "#222", "#003438"]}
+                />
               </li>
             )
           )}

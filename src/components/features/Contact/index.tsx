@@ -65,7 +65,7 @@ const Contact = ({}: Props) => {
             value={formData.name}
             onChange={handleChange}
             type="text"
-            placeholder="NAME"
+            placeholder="NAME*"
           />
           <input
             className={styles.input}
@@ -74,14 +74,14 @@ const Contact = ({}: Props) => {
             value={formData.email}
             onChange={handleChange}
             type="email"
-            placeholder="EMAIL"
+            placeholder="EMAIL*"
           />
           <textarea
             className={styles.input}
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="MESSAGE"
+            placeholder="MESSAGE*"
           />
           <button
             className={styles.input}
@@ -104,6 +104,7 @@ const Contact = ({}: Props) => {
           <li>
             <a
               href="mailto:marcobuontempo96@gmail.com"
+              aria-label="Email Address (Mail-To) for Marco Buontempo"
               target="_blank"
               referrerPolicy="no-referrer"
             >
@@ -113,19 +114,23 @@ const Contact = ({}: Props) => {
           <li>
             <a
               href="https://github.com/marcobuontempo/"
+              aria-label="GitHub Account for Marco Buontempo"
               target="_blank"
               referrerPolicy="no-referrer"
             >
               <FaSquareGithub className={styles.link} />
             </a>
           </li>
-          <a
-            href="https://www.linkedin.com/in/marcobuontempo/"
-            target="_blank"
-            referrerPolicy="no-referrer"
-          >
-            <FaLinkedin className={styles.link} />
-          </a>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/marcobuontempo/"
+              aria-label="LinkedIn Account for Marco Buontempo"
+              target="_blank"
+              referrerPolicy="no-referrer"
+            >
+              <FaLinkedin className={styles.link} />
+            </a>
+          </li>
         </ul>
       </div>
     </Section>

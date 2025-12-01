@@ -11,6 +11,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import styles from "./styles.module.css";
 import { Md360 } from "react-icons/md";
 
+/** ELEMENT TO SHOW IF THREE.JS FAILS TO RENDER */
 const FallbackDisplay = () => {
   return (
     <div className={styles.fallback}>
@@ -19,16 +20,75 @@ const FallbackDisplay = () => {
   );
 };
 
+/** DYNAMICALLY ADJUSTS THE CAMERA SIZE (MOBILE-RESPONSIVE) */
+const AdaptiveCamera = () => {
+  const { size, camera } = useThree();
+
+  useEffect(() => {
+    const minZoom = 30; // how far out to allow
+    const maxZoom = 120; // how close to allow
+
+    // scale zoom smoothly with screen width
+    const zoom = Math.min(maxZoom, Math.max(minZoom, size.width * 0.08));
+
+    camera.zoom = zoom;
+
+    camera.updateProjectionMatrix();
+
+    window.dispatchEvent(new Event("resize"));
+  }, [size.width, size.height]);
+
+  return null;
+};
+
+/** DYNAMICALLY ADJUST THE ASCII RENDERER RESOLUTION (READABLE ON SMALL SCREENS) */
+const AdaptiveAscii = ({
+  fgColor,
+  bgColor,
+}: {
+  fgColor: string;
+  bgColor: string;
+}) => {
+  const { size } = useThree();
+
+  // Pixel-based scaling (for responsive UI)
+  const minRes = 0.2;
+  const maxRes = 0.4;
+
+  const minWidth = 320; // smallest mobile
+  const maxWidth = 1200; // large desktop
+
+  // interpolate and clamp
+  const pixelScale = Math.min(
+    maxRes,
+    Math.max(
+      minRes,
+      maxRes -
+        ((size.width - minWidth) / (maxWidth - minWidth)) * (maxRes - minRes)
+    )
+  );
+
+  return (
+    <AsciiRenderer
+      fgColor={fgColor}
+      bgColor={bgColor}
+      resolution={pixelScale}
+    />
+  );
+};
+
+/** CREATE THE SCENE (TEXT AND POSITION) */
 const Scene = () => {
   const ref = useRef<any>(null);
   const direction = useRef(1);
   const { viewport } = useThree();
+
   useFrame((_state, delta) => {
     if (!ref.current) return;
 
     ref.current.rotation.y += (direction.current * delta) / 15;
 
-    if (ref.current.rotation.y >= 0.3) {
+    if (ref.current.rotation.y >= 0.4) {
       direction.current = -1;
     } else if (ref.current.rotation.y <= 0.05) {
       direction.current = 1;
@@ -36,7 +96,7 @@ const Scene = () => {
   });
 
   return (
-    <Center rotation={[0, 0.05, 0]} ref={ref}>
+    <Center ref={ref} rotation={[0.2, 0.4, 0]}>
       <Text3D
         font={fontUrl}
         curveSegments={20}
@@ -56,38 +116,47 @@ const Scene = () => {
   );
 };
 
-type AsciiText3dProps = {
-  color?: string;
-};
+/** THE FINAL COMPONENT TO RENDER */
+const AsciiText3d = ({ color = "white" }: { color?: string }) => {
+  const ref = useRef<any>(null);
 
-const AsciiText3d = ({ color = "white" }: AsciiText3dProps) => {
   useEffect(() => {
     // r3f bug workaround: reflow/resize on mount to force trigger canvas sizing
     requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
   }, []);
 
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const observer = new ResizeObserver(() => {
+      // instead of dispatchEvent, handle your camera / ASCII updates directly
+      window.dispatchEvent(new Event("resize")); // optional one-off
+    });
+
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={ref}>
       {/* Catch if WebGL fails */}
       <ErrorBoundary FallbackComponent={FallbackDisplay}>
-        <div className={styles.container}>
+        <div className={styles.ascii}>
           <Canvas
             orthographic
-            camera={{ position: [0, -50, 100], zoom: 100 }}
+            camera={{ position: [0, 0, 100], zoom: 100 }}
             fallback={<FallbackDisplay />}
             className={styles.canvas}
           >
+            <AdaptiveCamera />
             <color attach="background" args={["black"]} />
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} />
 
             <Scene />
 
-            <AsciiRenderer
-              fgColor={color}
-              bgColor="transparent"
-              resolution={0.17}
-            />
+            <AdaptiveAscii fgColor={color} bgColor="transparent" />
 
             <OrbitControls
               enableZoom={false}
@@ -96,8 +165,8 @@ const AsciiText3d = ({ color = "white" }: AsciiText3dProps) => {
               maxPolarAngle={2}
             />
           </Canvas>
-          <Md360 className={styles.rotate} />
         </div>
+        <Md360 className={styles.rotate} />
       </ErrorBoundary>
     </div>
   );

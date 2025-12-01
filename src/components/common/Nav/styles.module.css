@@ -5,6 +5,14 @@
 .links {
   display: flex;
   gap: 4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .links {
+    gap: 2rem;
+  }
 }
 
 .button {
@@ -13,7 +21,7 @@
   appearance: none;
   font-size: 1.5rem;
   background: none;
-  color: white;
+  color: whitesmoke;
   border: none;
   text-transform: lowercase;
   padding: 0 1rem;
@@ -23,7 +31,8 @@
     content: "";
     inset: 0;
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    background: rgba(90, 0, 255, 0.15);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.5s ease-in-out;
