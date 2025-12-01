@@ -59,7 +59,7 @@ const AdaptiveAscii = ({
   const maxWidth = 1200; // large desktop
 
   // interpolate and clamp
-  const pixelScale = Math.min(
+  const resolution = Math.min(
     maxRes,
     Math.max(
       minRes,
@@ -68,11 +68,15 @@ const AdaptiveAscii = ({
     )
   );
 
+  // Force re-mount the AsciiRenderer on size or color change
+  const key = `${resolution}-${fgColor}-${bgColor}`;
+
   return (
     <AsciiRenderer
+      key={key}
       fgColor={fgColor}
       bgColor={bgColor}
-      resolution={pixelScale}
+      resolution={resolution}
     />
   );
 };
